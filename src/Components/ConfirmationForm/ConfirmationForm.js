@@ -1,13 +1,13 @@
 import React from "react";
 import { Form } from "../MainPage/styles";
 
-const ConfirmationForm = (props) => {
+const ConfirmationForm = ({ dataNascimento, telefone, cidade, sendForm, onChangeDataNascimento, onChangeTelefone, onChangeCidade }) => {
   return (
     <Form>
-      <input placeholder="Data de nascimento"/>
-      <input placeholder="Telefone"/>
-      <input placeholder="Cidade"/>
-      <button onClick={props.sendForm}>Enviar dados</button>
+      <input placeholder="Data de nascimento" value={dataNascimento} onChange={onChangeDataNascimento} />
+      <input placeholder="Telefone" value={telefone} onChange={onChangeTelefone} />
+      <input placeholder="Cidade" value={cidade} onChange={onChangeCidade} />
+      <button onClick={sendForm}>Enviar dados</button>
     </Form>
   );
 };
